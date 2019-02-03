@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  constructor(protected router: Router,
+              protected route: ActivatedRoute) {
+
+  }
+
+  goToConversation() {
+    this.router.navigate(['/conversation']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 
 }
